@@ -1,0 +1,16 @@
+{
+  "name": "ZenTime - Focus & Meditation Web App",
+  "short_name": "ZenTime",
+  "description": "Discover a new way to meditate, focus, and achieve mindfulness in your daily life.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f9f7fe",
+  "theme_color": "#6b5b95",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%236b5b95'/%3E%3Cpath d='M50 25v50M25 50h50' stroke='white' stroke-width='5'/%3E%3C/svg%3E",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
