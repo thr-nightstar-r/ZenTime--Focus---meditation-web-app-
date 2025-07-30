@@ -73,16 +73,93 @@
                         </ul>
                         <div class="feature-demo">
                             <div class="demo-placeholder">
-                                <!-- Meditation interface placeholder -->
-                                <div class="demo-content">
+                                <!-- Meditation interface demo (fully interactive) -->
+                                <div class="demo-content" id="meditation-demo">
                                     <div class="demo-header">Calm Mind Meditation</div>
-                                    <div class="demo-timer">15:00</div>
+                                    <div class="demo-timer" id="demo-timer">15:00</div>
+                                    <progress class="demo-progress" id="demo-progress" value="0" max="900" style="width:100%;"></progress>
                                     <div class="demo-controls">
-                                        <span class="demo-btn"></span>
-                                        <span class="demo-btn"></span>
-                                        <span class="demo-btn"></span>
+                                        <button class="demo-btn" id="demo-start" title="Start" aria-label="Start Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
+                                        <button class="demo-btn" id="demo-pause" title="Pause" aria-label="Pause Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></button>
+                                        <button class="demo-btn" id="demo-stop" title="Stop" aria-label="Stop Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
                                     </div>
+                                    <div class="demo-volume">
+                                        <label for="demo-volume-slider">Volume</label>
+                                        <input type="range" id="demo-volume-slider" min="0" max="1" step="0.01" value="0.5" aria-label="Volume">
+                                    </div>
+                                    <div class="demo-quote" id="demo-quote">Peace comes from within. Do not seek it without.</div>
                                 </div>
+                                <script>
+                                // Interactive Meditation Demo Logic
+                                (function() {
+                                    const demoTimer = document.getElementById('demo-timer');
+                                    const demoProgress = document.getElementById('demo-progress');
+                                    const demoStart = document.getElementById('demo-start');
+                                    const demoPause = document.getElementById('demo-pause');
+                                    const demoStop = document.getElementById('demo-stop');
+                                    const demoVolume = document.getElementById('demo-volume-slider');
+                                    const demoQuote = document.getElementById('demo-quote');
+                                    const quotes = [
+                                        "Peace comes from within. Do not seek it without.",
+                                        "The mind is everything. What you think you become.",
+                                        "Quiet the mind and the soul will speak.",
+                                        "Meditation is not evasion; it is a serene encounter with reality.",
+                                        "Every morning we are born again. What we do today is what matters most."
+                                    ];
+                                    let audio = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b2.mp3');
+                                    let duration = 900;
+                                    let elapsed = 0;
+                                    let timer = null;
+                                    audio.volume = 0.5;
+                                    function updateTimer() {
+                                        const min = Math.floor((duration - elapsed) / 60);
+                                        const sec = (duration - elapsed) % 60;
+                                        demoTimer.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
+                                        demoProgress.value = elapsed;
+                                    }
+                                    function showQuote() {
+                                        demoQuote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+                                    }
+                                    demoStart.onclick = function() {
+                                        if (timer) return;
+                                        audio.currentTime = 0;
+                                        audio.play();
+                                        showQuote();
+                                        timer = setInterval(function() {
+                                            elapsed++;
+                                            updateTimer();
+                                            if (elapsed >= duration) {
+                                                clearInterval(timer);
+                                                timer = null;
+                                                audio.pause();
+                                                elapsed = 0;
+                                                updateTimer();
+                                                alert('Meditation session completed!');
+                                            }
+                                        }, 1000);
+                                    };
+                                    demoPause.onclick = function() {
+                                        if (!timer) return;
+                                        clearInterval(timer);
+                                        timer = null;
+                                        audio.pause();
+                                    };
+                                    demoStop.onclick = function() {
+                                        if (timer) {
+                                            clearInterval(timer);
+                                            timer = null;
+                                        }
+                                        audio.pause();
+                                        audio.currentTime = 0;
+                                        elapsed = 0;
+                                        updateTimer();
+                                    };
+                                    demoVolume.oninput = function(e) {
+                                        audio.volume = e.target.value;
+                                    };
+                                    updateTimer();
+                                })();
+                                </script>
                             </div>
                         </div>
                     </div>
@@ -137,25 +214,78 @@
                             <li>Custom sound mixing</li>
                         </ul>
                         <div class="feature-demo">
-                            <div class="demo-placeholder">
-                                <!-- Sound mixer interface placeholder -->
-                                <div class="demo-content">
-                                    <div class="demo-header">Sound Mixer</div>
+                            <div class="demo-placeholder" style="background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); padding: 24px;">
+                                <!-- Ambient Sound Mixer Demo -->
+                                <div class="demo-content" id="sound-mixer-demo" style="background: rgba(255,255,255,0.85); border-radius: 8px; padding: 16px;">
+                                    <div class="demo-header">Ambient Sound Mixer</div>
                                     <div class="demo-mixer">
                                         <div class="mixer-item">
-                                            <div class="mixer-label">Rain</div>
-                                            <div class="mixer-slider"></div>
+                                            <div class="mixer-label">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M3 10v4a1 1 0 0 0 1 1h3l4 4V5l-4 4H4a1 1 0 0 0-1 1z" fill="#6b5b95"/></svg>
+                                                Rain
+                                            </div>
+                                            <input type="range" id="rain-slider" min="0" max="1" step="0.01" value="0.5">
+                                            <button class="preview-btn" id="rain-preview" title="Preview Rain" aria-label="Preview Rain" style="margin-left:8px;">Preview</button>
+                                            <span class="mixer-desc">Gentle rain for relaxation</span>
                                         </div>
                                         <div class="mixer-item">
-                                            <div class="mixer-label">Birds</div>
-                                            <div class="mixer-slider"></div>
+                                            <div class="mixer-label">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 14.93V19a1 1 0 0 1-2 0v-2.07A8.001 8.001 0 0 1 4.07 13H2a1 1 0 0 1 0-2h2.07A8.001 8.001 0 0 1 11 4.07V2a1 1 0 0 1 2 0v2.07A8.001 8.001 0 0 1 19.93 11H22a1 1 0 0 1 0 2h-2.07A8.001 8.001 0 0 1 13 19.93z" fill="#6b5b95"/></svg>
+                                                Forest Birds
+                                            </div>
+                                            <input type="range" id="birds-slider" min="0" max="1" step="0.01" value="0.5">
+                                            <button class="preview-btn" id="birds-preview" title="Preview Birds" aria-label="Preview Birds" style="margin-left:8px;">Preview</button>
+                                            <span class="mixer-desc">Chirping birds for focus</span>
                                         </div>
                                         <div class="mixer-item">
-                                            <div class="mixer-label">Wind</div>
-                                            <div class="mixer-slider"></div>
+                                            <div class="mixer-label">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 14a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" fill="#6b5b95"/></svg>
+                                                Ocean Waves
+                                            </div>
+                                            <input type="range" id="ocean-slider" min="0" max="1" step="0.01" value="0.5">
+                                            <button class="preview-btn" id="ocean-preview" title="Preview Ocean" aria-label="Preview Ocean" style="margin-left:8px;">Preview</button>
+                                            <span class="mixer-desc">Soothing ocean for calm</span>
                                         </div>
                                     </div>
+                                    <div class="demo-controls" style="margin-top:16px;">
+                                        <button class="demo-btn" id="mixer-play" title="Play All" aria-label="Play All"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
+                                        <button class="demo-btn" id="mixer-stop" title="Stop All" aria-label="Stop All"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
+                                    </div>
                                 </div>
+                                <script>
+                                // Ambient Sound Mixer Demo Logic
+                                (function() {
+                                    const rain = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b4.mp3');
+                                    const birds = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b3.mp3');
+                                    const ocean = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b2.mp3');
+                                    rain.loop = birds.loop = ocean.loop = true;
+                                    rain.volume = 0.5; birds.volume = 0.5; ocean.volume = 0.5;
+                                    document.getElementById('rain-slider').oninput = e => rain.volume = e.target.value;
+                                    document.getElementById('birds-slider').oninput = e => birds.volume = e.target.value;
+                                    document.getElementById('ocean-slider').oninput = e => ocean.volume = e.target.value;
+                                    document.getElementById('mixer-play').onclick = () => { rain.play(); birds.play(); ocean.play(); };
+                                    document.getElementById('mixer-stop').onclick = () => { rain.pause(); birds.pause(); ocean.pause(); rain.currentTime = birds.currentTime = ocean.currentTime = 0; };
+                                    // Individual preview logic
+                                    document.getElementById('rain-preview').onclick = () => {
+                                        rain.currentTime = 0;
+                                        rain.volume = document.getElementById('rain-slider').value;
+                                        rain.play();
+                                        setTimeout(() => rain.pause(), 4000);
+                                    };
+                                    document.getElementById('birds-preview').onclick = () => {
+                                        birds.currentTime = 0;
+                                        birds.volume = document.getElementById('birds-slider').value;
+                                        birds.play();
+                                        setTimeout(() => birds.pause(), 4000);
+                                    };
+                                    document.getElementById('ocean-preview').onclick = () => {
+                                        ocean.currentTime = 0;
+                                        ocean.volume = document.getElementById('ocean-slider').value;
+                                        ocean.play();
+                                        setTimeout(() => ocean.pause(), 4000);
+                                    };
+                                })();
+                                </script>
                             </div>
                         </div>
                     </div>
