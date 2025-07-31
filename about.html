@@ -3,73 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#6b5b95">
-    <meta name="description" content="About ZenTime - Focus & Meditation Web App">
-    <title>About - ZenTime</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Us - ZenTime AI-Powered Fitness & Meditation</title>
+    <meta name="description" content="Learn about ZenTime's mission to revolutionize fitness and meditation with AI technology">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%236b5b95'/%3E%3Cpath d='M50 25v50M25 50h50' stroke='white' stroke-width='5'/%3E%3C/svg%3E" type="image/svg+xml">
 </head>
 <body>
-    <div class="page-transition"></div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">Z</div>
-                    Zen<span>Time</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </nav>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Loading ZenTime...</h3>
+            <p>Preparing your wellness journey</p>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <!-- About Hero -->
-        <section class="page-hero">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="brand-icon me-2">Z</div>
+                <span class="fw-bold">ZenTime</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="index.html#ai-coach">Try AI Coach</a>
+                    </li>
+                </ul>
+                </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section pt-5">
             <div class="container">
-                <div class="page-hero-content animate-fade-in">
-                    <h1 class="animate-slide-up">About ZenTime</h1>
-                    <p class="animate-slide-up delay-200">Our story, mission, and the team behind the meditation app</p>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">
+                            About <span class="text-gradient">ZenTime</span>
+                        </h1>
+                        <p class="lead mb-4">
+                            We're revolutionizing the way people approach fitness and meditation through cutting-edge AI technology, 
+                            creating a personalized wellness experience that adapts to your unique journey.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="stat-number" data-target="50000">0</h3>
+                                        <p class="stat-label">Users</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="stat-number" data-target="1000000">0</h3>
+                                        <p class="stat-label">Sessions</p>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <h3 class="stat-number" data-target="98">0</h3>
+                                        <p class="stat-label">% Success</p>
+                                    </div>
                 </div>
             </div>
-            <div class="wave-container">
-                <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#ffffff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,149.3C672,160,768,160,864,138.7C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
             </div>
-        </section>
-
-        <!-- Our Story Section -->
-        <section class="about-story">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text animate-fade-in">
-                        <h2>Our Story</h2>
-                        <p>ZenTime was created with a simple mission: to help people find moments of peace and clarity in their busy lives. In today's fast-paced world, taking time for mental wellness is more important than ever.</p>
-                        <p>Our journey began in 2020 when our founder, after experiencing burnout from a demanding tech career, discovered the transformative power of meditation and mindfulness practices. Realizing how these techniques could benefit others facing similar challenges, the idea for ZenTime was born.</p>
-                        <p>We combined ancient meditation techniques with modern focus strategies to create a comprehensive tool for mindfulness. Whether you're looking to reduce stress, improve concentration, or simply find a moment of tranquility, ZenTime provides the guidance and tools you need.</p>
                     </div>
-                    <div class="about-image animate-fade-in delay-200">
-                        <!-- Placeholder for about image -->
-                        <div class="image-placeholder">
-                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="100" cy="100" r="80" fill="#6b5b95" fill-opacity="0.1"/>
-                                <circle cx="100" cy="100" r="60" fill="#6b5b95" fill-opacity="0.2"/>
-                                <circle cx="100" cy="100" r="40" fill="#6b5b95" fill-opacity="0.3"/>
-                            </svg>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="floating-cards">
+                            <div class="card floating-card" style="--delay: 0s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-lightbulb text-primary fs-1"></i>
+                                    <h5>Innovation</h5>
+                                    <p class="text-muted">AI-powered wellness</p>
+                                </div>
+                            </div>
+                            <div class="card floating-card" style="--delay: 1s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-heart text-success fs-1"></i>
+                                    <h5>Wellness</h5>
+                                    <p class="text-muted">Holistic approach</p>
+                                </div>
+                            </div>
+                            <div class="card floating-card" style="--delay: 2s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-people text-warning fs-1"></i>
+                                    <h5>Community</h5>
+                                    <p class="text-muted">Global support</p>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -77,192 +128,293 @@
         </section>
 
         <!-- Mission Section -->
-        <section class="about-mission">
+    <section class="py-5 bg-light">
             <div class="container">
-                <div class="section-header animate-fade-in">
-                    <h2>Our Mission</h2>
-                    <p>Bringing mindfulness and focus to everyone, everywhere</p>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="mission-content">
+                        <h2 class="display-5 fw-bold mb-4">Our Mission</h2>
+                        <p class="lead mb-4">
+                            To democratize access to personalized wellness through AI technology, making fitness and meditation 
+                            accessible, effective, and enjoyable for everyone, regardless of their experience level or lifestyle.
+                        </p>
+                        <div class="mission-values">
+                            <div class="value-item mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <span>Personalized AI coaching for every individual</span>
+                            </div>
+                            <div class="value-item mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <span>Science-backed fitness and meditation programs</span>
+                            </div>
+                            <div class="value-item mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <span>Accessible wellness for all skill levels</span>
                 </div>
-                <div class="mission-content animate-fade-in delay-200">
-                    <div class="mission-card">
-                        <div class="mission-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-                            </svg>
                         </div>
-                        <h3>Accessibility</h3>
-                        <p>We believe mindfulness should be accessible to everyone. Our app is designed to be intuitive for beginners while offering depth for experienced practitioners.</p>
                     </div>
-                    <div class="mission-card">
+                </div>
+                <div class="col-lg-6">
+                    <div class="mission-visual text-center">
                         <div class="mission-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <line x1="12" y1="8" x2="12" y2="12"></line>
-                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                            </svg>
+                            <i class="bi bi-target text-primary" style="font-size: 8rem;"></i>
                         </div>
-                        <h3>Education</h3>
-                        <p>We're committed to educating users about the science and benefits of mindfulness, helping them understand how and why these practices work.</p>
-                    </div>
-                    <div class="mission-card">
-                        <div class="mission-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                            </svg>
-                        </div>
-                        <h3>Community</h3>
-                        <p>We're building a supportive community of mindfulness practitioners who can share experiences and encourage each other on their journeys.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Stats Section -->
-        <section class="stats-section">
-            <div class="container">
-                <div class="stats">
-                    <div class="stat animate-count-up">
-                        <div class="stat-number" data-target="10000">0</div>
-                        <div class="stat-text">Active Users</div>
-                    </div>
-                    <div class="stat animate-count-up">
-                        <div class="stat-number" data-target="500">0</div>
-                        <div class="stat-text">Meditation Sessions</div>
-                    </div>
-                    <div class="stat animate-count-up">
-                        <div class="stat-number" data-target="48">0</div>
-                        <div class="stat-text">Average Rating (4.8)</div>
-                    </div>
-                    <div class="stat animate-count-up">
-                        <div class="stat-number" data-target="25">0</div>
-                        <div class="stat-text">Countries</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section -->
-        <section class="team-section">
-            <div class="container">
-                <div class="section-header animate-fade-in">
-                    <h2>Meet Our Team</h2>
-                    <p>The passionate people behind ZenTime</p>
-                </div>
-                <div class="team-grid">
-                    <div class="team-member animate-slide-up">
-                        <div class="member-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div class="photo-placeholder">
-                                <div class="initials">
-                                    <img src="Assets\Untitled design.jpg" alt="Profile">
-                                    </div>
+    <!-- Story Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="display-5 fw-bold mb-5">Our Story</h2>
+                    <div class="story-timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2020</div>
+                            <div class="timeline-content">
+                                <h4>The Beginning</h4>
+                                <p>Founded by a team of fitness enthusiasts and AI researchers who recognized the need for personalized wellness solutions.</p>
                             </div>
                         </div>
-                        <h3>Gaurav</h3>
-                        <p class="member-role">Founder & CEO</p>
-                        <p class="member-bio">Former tech executive with a passion for mindfulness and meditation. Jane founded ZenTime after experiencing the benefits of meditation firsthand.</p>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2021</div>
+                            <div class="timeline-content">
+                                <h4>AI Integration</h4>
+                                <p>Developed our first AI-powered workout recommendation system, helping users achieve better results.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2022</div>
+                            <div class="timeline-content">
+                                <h4>Meditation Focus</h4>
+                                <p>Expanded into mindfulness and meditation, creating guided sessions tailored to individual needs.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2023</div>
+                            <div class="timeline-content">
+                                <h4>Voice & Gesture</h4>
+                                <p>Introduced futuristic features like voice commands and gesture controls for hands-free operation.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker">2024</div>
+                            <div class="timeline-content">
+                                <h4>Global Reach</h4>
+                                <p>Reached 50,000+ users worldwide, helping people transform their lives through AI-powered wellness.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-member animate-slide-up delay-200">
-                        <div class="member-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div class="photo-placeholder">
-                                <div class="initials">
-                                 <img src="Assets\Untitled design.jpg" alt="Profile">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Team Section -->
+    <section class="py-5 bg-light">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Meet Our Team</h2>
+                    <p class="lead">The passionate minds behind ZenTime's innovation</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-avatar mb-3">
+                            <i class="bi bi-person-circle text-primary" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4>Dr. Sarah Chen</h4>
+                        <p class="text-muted">CEO & AI Research Lead</p>
+                        <p class="small">Former Google AI researcher with 10+ years in machine learning and wellness technology.</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-avatar mb-3">
+                            <i class="bi bi-person-circle text-success" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4>Marcus Rodriguez</h4>
+                        <p class="text-muted">CTO & Lead Developer</p>
+                        <p class="small">Full-stack developer with expertise in AI integration and mobile app development.</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="team-card text-center">
+                        <div class="team-avatar mb-3">
+                            <i class="bi bi-person-circle text-warning" style="font-size: 4rem;"></i>
+                        </div>
+                        <h4>Dr. Emily Watson</h4>
+                        <p class="text-muted">Head of Wellness</p>
+                        <p class="small">Certified fitness trainer and meditation instructor with a PhD in Sports Psychology.</p>
+                        <div class="team-social">
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Values Section -->
+    <section class="py-5">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Our Values</h2>
+                    <p class="lead">The principles that guide everything we do</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card text-center">
+                        <div class="value-icon mb-3">
+                            <i class="bi bi-heart-pulse text-primary fs-1"></i>
+                        </div>
+                        <h4>Wellness First</h4>
+                        <p>Your health and well-being are our top priority in every decision we make.</p>
+                                    </div>
+                            </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card text-center">
+                        <div class="value-icon mb-3">
+                            <i class="bi bi-lightbulb text-success fs-1"></i>
+                        </div>
+                        <h4>Innovation</h4>
+                        <p>Constantly pushing boundaries with cutting-edge AI and technology solutions.</p>
+                    </div>
                                 </div>
-                            </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card text-center">
+                        <div class="value-icon mb-3">
+                            <i class="bi bi-people text-warning fs-1"></i>
                         </div>
-                        <h3>Raj Verma</h3>
-                        <p class="member-role">Lead Developer</p>
-                        <p class="member-bio">Software engineer with over 1 years of experience. Raj is passionate about creating intuitive and accessible digital experiences.</p>
+                        <h4>Community</h4>
+                        <p>Building a supportive global community of wellness enthusiasts.</p>
                     </div>
-                    <div class="team-member animate-slide-up delay-400">
-                        <div class="member-photo">
-                            <!-- Placeholder for team member photo -->
-                            <div class="photo-placeholder">
-                                <div class="initials">
-                                    <img src="Assets\Untitled design.jpg" alt="Profile">
                                     </div>
-                            </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="value-card text-center">
+                        <div class="value-icon mb-3">
+                            <i class="bi bi-shield-check text-danger fs-1"></i>
                         </div>
-                        <h3>Raj's Grandfather</h3>
-                        <p class="member-role">Meditation Expert</p>
-                        <p class="member-bio">Certified meditation instructor with 15 years of practice. Amy creates and curates all meditation content for ZenTime.</p>
+                        <h4>Trust</h4>
+                        <p>Maintaining the highest standards of privacy, security, and data protection.</p>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+    <section class="py-5 bg-primary text-white">
             <div class="container">
-                <div class="cta-content animate-fade-in">
-                    <h2>Join Our Mindfulness Journey</h2>
-                    <p>Become part of our growing community of mindful individuals.</p>
-                    <a href="contact.html" class="btn btn-large pulse">Get In Touch</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo">Zen<span>Time</span></a>
-                    <p>ZenTime is dedicated to helping you find peace, focus, and balance in your daily life through meditation and mindfulness practices.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Transform Your Life?</h2>
+                    <p class="lead mb-4">
+                        Join thousands of users who have already discovered the power of AI-powered wellness with ZenTime.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="index.html" class="btn btn-light btn-lg me-3">
+                            <i class="bi bi-play-circle me-2"></i>Get Started
                         </a>
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                            </svg>
+                        <a href="contact.html" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-chat me-2"></i>Contact Us
                         </a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <h4 class="mb-3">
+                            <div class="brand-icon me-2">Z</div>
+                            ZenTime
+                        </h4>
+                        <p>Transform your life with AI-powered fitness and meditation. Personalized wellness for everyone.</p>
+                    <div class="social-links">
+                            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Product</h5>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="features.html">Features</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#ai-coach">AI Coach</a></li>
+                        <li><a href="index.html#progress">Progress</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter to receive updates and mindfulness tips.</p>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Stay updated with the latest wellness tips and features.</p>
                     <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Your Email" required>
-                        <button type="submit" class="newsletter-btn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="bi bi-arrow-right"></i>
                         </button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ZenTime. All Rights Reserved. Designed by Your Name</p>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 ZenTime. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with ❤️ for your wellness journey</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
