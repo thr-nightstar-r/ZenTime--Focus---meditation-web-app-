@@ -3,425 +3,601 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#6b5b95">
-    <meta name="description" content="ZenTime Features - Focus & Meditation Web App">
-    <title>Features - ZenTime</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Features - ZenTime AI-Powered Fitness & Meditation</title>
+    <meta name="description" content="Explore all the amazing features of ZenTime - AI coaching, workouts, meditation, music, and more">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%236b5b95'/%3E%3Cpath d='M50 25v50M25 50h50' stroke='white' stroke-width='5'/%3E%3C/svg%3E" type="image/svg+xml">
 </head>
 <body>
-    <div class="page-transition"></div>
-    
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">Z</div>
-                    Zen<span>Time</span>
-                </a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="features.html" class="active">Features</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="mobile-menu">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                </div>
-            </nav>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h3>Loading ZenTime...</h3>
+            <p>Discovering amazing features</p>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <!-- Features Hero -->
-        <section class="page-hero">
-            <div class="container">
-                <div class="page-hero-content animate-fade-in">
-                    <h1 class="animate-slide-up">ZenTime Features</h1>
-                    <p class="animate-slide-up delay-200">Discover the tools that will help you achieve mindfulness and focus</p>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <div class="brand-icon me-2">Z</div>
+                <span class="fw-bold">ZenTime</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white ms-2" href="index.html#ai-coach">Try AI Coach</a>
+                    </li>
+                </ul>
                 </div>
-            </div>
-            <div class="wave-container">
-                <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-                    <path fill="#ffffff" fill-opacity="1" d="M0,192L48,176C96,160,192,128,288,122.7C384,117,480,139,576,149.3C672,160,768,160,864,138.7C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-                </svg>
-            </div>
-        </section>
+        </div>
+    </nav>
 
-        <!-- Features Section -->
-        <section class="features">
+    <!-- Hero Section -->
+    <section class="hero-section pt-5">
             <div class="container">
-                <div class="features-grid">
-                    <div class="feature-card animate-slide-up">
-                        <div class="feature-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                            </svg>
-                        </div>
-                        <h3>Guided Meditation</h3>
-                        <p>Follow our expert-led meditation sessions designed for beginners and advanced practitioners alike. Choose from various durations and themes to fit your schedule and needs.</p>
-                        <ul class="feature-list">
-                            <li>Beginner to advanced sessions</li>
-                            <li>Multiple duration options (5-60 min)</li>
-                            <li>Themed meditations (sleep, anxiety, focus)</li>
-                            <li>Voice-guided with ambient backgrounds</li>
-                        </ul>
-                        <div class="feature-demo">
-                            <div class="demo-placeholder">
-                                <!-- Meditation interface demo (fully interactive) -->
-                                <div class="demo-content" id="meditation-demo">
-                                    <div class="demo-header">Calm Mind Meditation</div>
-                                    <div class="demo-timer" id="demo-timer">15:00</div>
-                                    <progress class="demo-progress" id="demo-progress" value="0" max="900" style="width:100%;"></progress>
-                                    <div class="demo-controls">
-                                        <button class="demo-btn" id="demo-start" title="Start" aria-label="Start Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
-                                        <button class="demo-btn" id="demo-pause" title="Pause" aria-label="Pause Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></button>
-                                        <button class="demo-btn" id="demo-stop" title="Stop" aria-label="Stop Meditation"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
-                                    </div>
-                                    <div class="demo-volume">
-                                        <label for="demo-volume-slider">Volume</label>
-                                        <input type="range" id="demo-volume-slider" min="0" max="1" step="0.01" value="0.5" aria-label="Volume">
-                                    </div>
-                                    <div class="demo-quote" id="demo-quote">Peace comes from within. Do not seek it without.</div>
-                                </div>
-                                <script>
-                                // Interactive Meditation Demo Logic
-                                (function() {
-                                    const demoTimer = document.getElementById('demo-timer');
-                                    const demoProgress = document.getElementById('demo-progress');
-                                    const demoStart = document.getElementById('demo-start');
-                                    const demoPause = document.getElementById('demo-pause');
-                                    const demoStop = document.getElementById('demo-stop');
-                                    const demoVolume = document.getElementById('demo-volume-slider');
-                                    const demoQuote = document.getElementById('demo-quote');
-                                    const quotes = [
-                                        "Peace comes from within. Do not seek it without.",
-                                        "The mind is everything. What you think you become.",
-                                        "Quiet the mind and the soul will speak.",
-                                        "Meditation is not evasion; it is a serene encounter with reality.",
-                                        "Every morning we are born again. What we do today is what matters most."
-                                    ];
-                                    let audio = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b2.mp3');
-                                    let duration = 900;
-                                    let elapsed = 0;
-                                    let timer = null;
-                                    audio.volume = 0.5;
-                                    function updateTimer() {
-                                        const min = Math.floor((duration - elapsed) / 60);
-                                        const sec = (duration - elapsed) % 60;
-                                        demoTimer.textContent = `${min.toString().padStart(2, '0')}:${sec.toString().padStart(2, '0')}`;
-                                        demoProgress.value = elapsed;
-                                    }
-                                    function showQuote() {
-                                        demoQuote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-                                    }
-                                    demoStart.onclick = function() {
-                                        if (timer) return;
-                                        audio.currentTime = 0;
-                                        audio.play();
-                                        showQuote();
-                                        timer = setInterval(function() {
-                                            elapsed++;
-                                            updateTimer();
-                                            if (elapsed >= duration) {
-                                                clearInterval(timer);
-                                                timer = null;
-                                                audio.pause();
-                                                elapsed = 0;
-                                                updateTimer();
-                                                alert('Meditation session completed!');
-                                            }
-                                        }, 1000);
-                                    };
-                                    demoPause.onclick = function() {
-                                        if (!timer) return;
-                                        clearInterval(timer);
-                                        timer = null;
-                                        audio.pause();
-                                    };
-                                    demoStop.onclick = function() {
-                                        if (timer) {
-                                            clearInterval(timer);
-                                            timer = null;
-                                        }
-                                        audio.pause();
-                                        audio.currentTime = 0;
-                                        elapsed = 0;
-                                        updateTimer();
-                                    };
-                                    demoVolume.oninput = function(e) {
-                                        audio.volume = e.target.value;
-                                    };
-                                    updateTimer();
-                                })();
-                                </script>
-                            </div>
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">
+                            Discover <span class="text-gradient">Amazing</span> Features
+                        </h1>
+                        <p class="lead mb-4">
+                            Explore the cutting-edge features that make ZenTime the ultimate AI-powered fitness and meditation platform. 
+                            From personalized coaching to advanced analytics, we've got everything you need.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#ai-coaching" class="btn btn-primary btn-lg me-3">
+                                <i class="bi bi-robot me-2"></i>AI Coaching
+                            </a>
+                            <a href="#workouts" class="btn btn-outline-primary btn-lg">
+                                <i class="bi bi-activity me-2"></i>Workouts
+                            </a>
                         </div>
                     </div>
-                    
-                    <div class="feature-card animate-slide-up delay-200">
-                        <div class="feature-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <h3>Focus Timer</h3>
-                        <p>Enhance your productivity with our customizable focus timer. Set work intervals and breaks using the Pomodoro technique or create your own schedule to maximize efficiency.</p>
-                        <ul class="feature-list">
-                            <li>Pomodoro technique integration</li>
-                            <li>Customizable work/break intervals</li>
-                            <li>Task tracking and statistics</li>
-                            <li>Gentle notification sounds</li>
-                        </ul>
-                        <div class="feature-demo">
-                            <div class="demo-placeholder">
-                                <!-- Focus timer interface placeholder -->
-                                <div class="demo-content">
-                                    <div class="demo-header">Focus Session</div>
-                                    <div class="demo-timer">25:00</div>
-                                    <div class="demo-progress">
-                                        <div class="progress-bar"></div>
-                                    </div>
-                                    <div class="demo-controls">
-                                        <span class="demo-btn"></span>
-                                        <span class="demo-btn"></span>
-                                        <span class="demo-btn"></span>
-                                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="floating-cards">
+                            <div class="card floating-card" style="--delay: 0s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-robot text-primary fs-1"></i>
+                                    <h5>AI Coach</h5>
+                                    <p class="text-muted">Personalized guidance</p>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card animate-slide-up delay-400">
-                        <div class="feature-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-                                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
-                            </svg>
-                        </div>
-                        <h3>Ambient Sounds</h3>
-                        <p>Immerse yourself in calming soundscapes that help you relax and concentrate. Choose from nature sounds, white noise, or gentle music to create your perfect environment.</p>
-                        <ul class="feature-list">
-                            <li>Nature sounds (rain, forest, ocean)</li>
-                            <li>White, pink, and brown noise</li>
-                            <li>Binaural beats for deep focus</li>
-                            <li>Custom sound mixing</li>
-                        </ul>
-                        <div class="feature-demo">
-                            <div class="demo-placeholder" style="background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80') center/cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.12); padding: 24px;">
-                                <!-- Ambient Sound Mixer Demo -->
-                                <div class="demo-content" id="sound-mixer-demo" style="background: rgba(255,255,255,0.85); border-radius: 8px; padding: 16px;">
-                                    <div class="demo-header">Ambient Sound Mixer</div>
-                                    <div class="demo-mixer">
-                                        <div class="mixer-item">
-                                            <div class="mixer-label">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M3 10v4a1 1 0 0 0 1 1h3l4 4V5l-4 4H4a1 1 0 0 0-1 1z" fill="#6b5b95"/></svg>
-                                                Rain
-                                            </div>
-                                            <input type="range" id="rain-slider" min="0" max="1" step="0.01" value="0.5">
-                                            <button class="preview-btn" id="rain-preview" title="Preview Rain" aria-label="Preview Rain" style="margin-left:8px;">Preview</button>
-                                            <span class="mixer-desc">Gentle rain for relaxation</span>
-                                        </div>
-                                        <div class="mixer-item">
-                                            <div class="mixer-label">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 14.93V19a1 1 0 0 1-2 0v-2.07A8.001 8.001 0 0 1 4.07 13H2a1 1 0 0 1 0-2h2.07A8.001 8.001 0 0 1 11 4.07V2a1 1 0 0 1 2 0v2.07A8.001 8.001 0 0 1 19.93 11H22a1 1 0 0 1 0 2h-2.07A8.001 8.001 0 0 1 13 19.93z" fill="#6b5b95"/></svg>
-                                                Forest Birds
-                                            </div>
-                                            <input type="range" id="birds-slider" min="0" max="1" step="0.01" value="0.5">
-                                            <button class="preview-btn" id="birds-preview" title="Preview Birds" aria-label="Preview Birds" style="margin-left:8px;">Preview</button>
-                                            <span class="mixer-desc">Chirping birds for focus</span>
-                                        </div>
-                                        <div class="mixer-item">
-                                            <div class="mixer-label">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;"><path d="M2 12c0-5.52 4.48-10 10-10s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm10-8a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 14a6 6 0 1 1 0-12 6 6 0 0 1 0 12z" fill="#6b5b95"/></svg>
-                                                Ocean Waves
-                                            </div>
-                                            <input type="range" id="ocean-slider" min="0" max="1" step="0.01" value="0.5">
-                                            <button class="preview-btn" id="ocean-preview" title="Preview Ocean" aria-label="Preview Ocean" style="margin-left:8px;">Preview</button>
-                                            <span class="mixer-desc">Soothing ocean for calm</span>
-                                        </div>
-                                    </div>
-                                    <div class="demo-controls" style="margin-top:16px;">
-                                        <button class="demo-btn" id="mixer-play" title="Play All" aria-label="Play All"><svg width="20" height="20" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></button>
-                                        <button class="demo-btn" id="mixer-stop" title="Stop All" aria-label="Stop All"><svg width="20" height="20" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12"></rect></svg></button>
-                                    </div>
+                            <div class="card floating-card" style="--delay: 1s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-music-note text-success fs-1"></i>
+                                    <h5>Music & Video</h5>
+                                    <p class="text-muted">Curated content</p>
                                 </div>
-                                <script>
-                                // Ambient Sound Mixer Demo Logic
-                                (function() {
-                                    const rain = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b4.mp3');
-                                    const birds = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b3.mp3');
-                                    const ocean = new Audio('https://cdn.pixabay.com/audio/2022/10/16/audio_12b6c7b7b2.mp3');
-                                    rain.loop = birds.loop = ocean.loop = true;
-                                    rain.volume = 0.5; birds.volume = 0.5; ocean.volume = 0.5;
-                                    document.getElementById('rain-slider').oninput = e => rain.volume = e.target.value;
-                                    document.getElementById('birds-slider').oninput = e => birds.volume = e.target.value;
-                                    document.getElementById('ocean-slider').oninput = e => ocean.volume = e.target.value;
-                                    document.getElementById('mixer-play').onclick = () => { rain.play(); birds.play(); ocean.play(); };
-                                    document.getElementById('mixer-stop').onclick = () => { rain.pause(); birds.pause(); ocean.pause(); rain.currentTime = birds.currentTime = ocean.currentTime = 0; };
-                                    // Individual preview logic
-                                    document.getElementById('rain-preview').onclick = () => {
-                                        rain.currentTime = 0;
-                                        rain.volume = document.getElementById('rain-slider').value;
-                                        rain.play();
-                                        setTimeout(() => rain.pause(), 4000);
-                                    };
-                                    document.getElementById('birds-preview').onclick = () => {
-                                        birds.currentTime = 0;
-                                        birds.volume = document.getElementById('birds-slider').value;
-                                        birds.play();
-                                        setTimeout(() => birds.pause(), 4000);
-                                    };
-                                    document.getElementById('ocean-preview').onclick = () => {
-                                        ocean.currentTime = 0;
-                                        ocean.volume = document.getElementById('ocean-slider').value;
-                                        ocean.play();
-                                        setTimeout(() => ocean.pause(), 4000);
-                                    };
-                                })();
-                                </script>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <div class="feature-card animate-slide-up delay-600">
-                        <div class="feature-icon">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                <path d="M2 17l10 5 10-5"></path>
-                                <path d="M2 12l10 5 10-5"></path>
-                            </svg>
-                        </div>
-                        <h3>Progress Tracking</h3>
-                        <p>Monitor your meditation and focus journey with detailed statistics and insights. Set goals, track streaks, and visualize your improvement over time.</p>
-                        <ul class="feature-list">
-                            <li>Daily streak tracking</li>
-                            <li>Meditation minutes logged</li>
-                            <li>Focus session analytics</li>
-                            <li>Goal setting and achievements</li>
-                        </ul>
-                        <div class="feature-demo">
-                            <div class="demo-placeholder">
-                                <!-- Progress tracking interface placeholder -->
-                                <div class="demo-content">
-                                    <div class="demo-header">Your Progress</div>
-                                    <div class="demo-stats">
-                                        <div class="stat-item">
-                                            <div class="stat-value">12</div>
-                                            <div class="stat-label">Day Streak</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-value">240</div>
-                                            <div class="stat-label">Minutes</div>
-                                        </div>
-                                        <div class="stat-item">
-                                            <div class="stat-value">8</div>
-                                            <div class="stat-label">Sessions</div>
-                                        </div>
-                                    </div>
+                            <div class="card floating-card" style="--delay: 2s">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-graph-up text-warning fs-1"></i>
+                                    <h5>Analytics</h5>
+                                    <p class="text-muted">Track progress</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
-        <!-- Interactive Demo Section -->
-        <section class="interactive-demo">
+    <!-- AI Coaching Section -->
+    <section id="ai-coaching" class="py-5 bg-light">
             <div class="container">
-                <div class="section-header animate-fade-in">
-                    <h2>Try Our Breathing Exercise</h2>
-                    <p>Experience a sample of what ZenTime has to offer</p>
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">AI Personal Coach</h2>
+                    <p class="lead">Your intelligent fitness companion</p>
                 </div>
-                <div class="breathing-exercise animate-fade-in delay-200">
-                    <div class="breathing-circle">
-                        <div class="circle-text">Breathe</div>
+                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                        <div class="feature-demo">
+                        <div class="ai-chat-interface">
+                            <div class="chat-container">
+                                <div class="chat-header">
+                                    <div class="ai-avatar">
+                                        <i class="bi bi-robot"></i>
+                                    </div>
+                                    <div class="ai-info">
+                                        <h5>ZenTime AI Coach</h5>
+                                        <span class="status">Online</span>
+                                    </div>
+                                </div>
+                                <div class="chat-messages" id="demoChatMessages">
+                                    <div class="message ai-message">
+                                        <div class="message-content">
+                                            <p>Hello! I'm your AI coach. I can help you with personalized workouts, meditation guidance, and wellness advice. What would you like to work on today?</p>
+                                        </div>
+                                    </div>
+                                    <div class="message user-message">
+                                        <div class="message-content">
+                                            <p>I want to start working out but I'm a beginner. Can you help?</p>
+                                        </div>
+                                    </div>
+                                    <div class="message ai-message">
+                                        <div class="message-content">
+                                            <p>Absolutely! I'll create a beginner-friendly workout plan just for you. Let's start with a 10-minute session to build your confidence. Ready to begin?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" placeholder="Try asking about workouts..." class="form-control">
+                                    <button class="btn btn-primary" aria-label="Send message">
+                                        <i class="bi bi-send"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="breathing-instructions">
-                        <p class="instruction-text">Inhale...</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="feature-details">
+                        <h3 class="mb-4">Intelligent Personalization</h3>
+                        <div class="feature-list-detailed">
+                            <div class="feature-item">
+                                <div class="feature-icon-small">
+                                    <i class="bi bi-brain text-primary"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Adaptive Learning</h5>
+                                    <p>Our AI learns from your preferences, progress, and feedback to provide increasingly personalized recommendations.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon-small">
+                                    <i class="bi bi-camera-video text-success"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Form Correction</h5>
+                                    <p>Real-time feedback on your exercise form to prevent injuries and maximize effectiveness.</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon-small">
+                                    <i class="bi bi-graph-up text-warning"></i>
+                                </div>
+                                <div class="feature-text">
+                                    <h5>Progress Optimization</h5>
+                                    <p>Continuously adjust your workout intensity and meditation sessions based on your performance.</p>
+                        </div>
+                                    </div>
+                            <div class="feature-item">
+                                <div class="feature-icon-small">
+                                    <i class="bi bi-clock text-info"></i>
+                                    </div>
+                                <div class="feature-text">
+                                    <h5>24/7 Availability</h5>
+                                    <p>Get coaching support anytime, anywhere. Your AI coach never sleeps!</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="breathing-controls">
-                        <button class="btn start-breathing">Start Exercise</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workouts Section -->
+    <section id="workouts" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Smart Workouts</h2>
+                    <p class="lead">From beginner to advanced, we have workouts for everyone</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <i class="bi bi-lightning-charge text-warning fs-1"></i>
+                            <h4>Quick HIIT</h4>
+                            <span class="badge bg-primary">10 min</span>
+                        </div>
+                        <p>High-intensity interval training for maximum calorie burn in minimum time.</p>
+                        <ul class="workout-features">
+                            <li><i class="bi bi-check-circle text-success"></i> No equipment needed</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Beginner friendly</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Full body workout</li>
+                        </ul>
+                        <button class="btn btn-primary w-100" onclick="startQuickWorkout()">
+                            <i class="bi bi-play-circle me-2"></i>Start Workout
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <i class="bi bi-heart-pulse text-danger fs-1"></i>
+                            <h4>Cardio Blast</h4>
+                            <span class="badge bg-success">20 min</span>
+                        </div>
+                        <p>Cardiovascular training to improve heart health and endurance.</p>
+                        <ul class="workout-features">
+                            <li><i class="bi bi-check-circle text-success"></i> Heart rate monitoring</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Progressive intensity</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Calorie tracking</li>
+                        </ul>
+                        <button class="btn btn-success w-100">
+                            <i class="bi bi-play-circle me-2"></i>Start Workout
+                        </button>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="workout-card">
+                        <div class="workout-header">
+                            <i class="bi bi-people text-info fs-1"></i>
+                            <h4>Strength Training</h4>
+                            <span class="badge bg-warning">30 min</span>
+                        </div>
+                        <p>Build muscle and strength with targeted resistance training.</p>
+                        <ul class="workout-features">
+                            <li><i class="bi bi-check-circle text-success"></i> Equipment optional</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Progressive overload</li>
+                            <li><i class="bi bi-check-circle text-success"></i> Muscle group focus</li>
+                        </ul>
+                        <button class="btn btn-warning w-100">
+                            <i class="bi bi-play-circle me-2"></i>Start Workout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meditation Section -->
+    <section id="meditation" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Mindfulness & Meditation</h2>
+                    <p class="lead">Find peace and clarity in your daily life</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="meditation-card">
+                        <div class="meditation-icon">
+                            <i class="bi bi-heart text-danger"></i>
+                        </div>
+                        <h5>Mindfulness</h5>
+                        <p>Present-moment awareness for stress reduction and mental clarity.</p>
+                        <span class="duration">5-15 min</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="meditation-card">
+                        <div class="meditation-icon">
+                            <i class="bi bi-moon text-primary"></i>
+                        </div>
+                        <h5>Sleep</h5>
+                        <p>Guided sessions to help you relax and fall asleep naturally.</p>
+                        <span class="duration">10-30 min</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="meditation-card">
+                        <div class="meditation-icon">
+                            <i class="bi bi-lightning text-warning"></i>
+                        </div>
+                        <h5>Focus</h5>
+                        <p>Concentration techniques to improve productivity and mental performance.</p>
+                        <span class="duration">5-20 min</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="meditation-card">
+                        <div class="meditation-icon">
+                            <i class="bi bi-sun text-success"></i>
+                        </div>
+                        <h5>Morning</h5>
+                        <p>Start your day with energy and intention through morning meditation.</p>
+                        <span class="duration">5-15 min</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <button class="btn btn-primary btn-lg" onclick="startMeditation()">
+                        <i class="bi bi-play-circle me-2"></i>Start Meditation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music & Video Section -->
+    <section id="music" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Music & Video Integration</h2>
+                    <p class="lead">Enhance your experience with curated content</p>
+                </div>
+                                            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="music-features">
+                        <div class="music-feature-item">
+                            <div class="feature-icon-large">
+                                <i class="bi bi-spotify text-success"></i>
+                                        </div>
+                            <div class="feature-content">
+                                <h4>Spotify Integration</h4>
+                                <p>Connect your Spotify account to access personalized workout playlists and meditation music.</p>
+                                            </div>
+                                        </div>
+                        <div class="music-feature-item">
+                            <div class="feature-icon-large">
+                                <i class="bi bi-youtube text-danger"></i>
+                                            </div>
+                            <div class="feature-content">
+                                <h4>YouTube Workouts</h4>
+                                <p>Access thousands of workout videos from top fitness instructors and channels.</p>
+                                        </div>
+                                    </div>
+                        <div class="music-feature-item">
+                            <div class="feature-icon-large">
+                                <i class="bi bi-music-note-beamed text-primary"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Custom Playlists</h4>
+                                <p>Create and share your own workout and meditation playlists with the community.</p>
+                                    </div>
+                                </div>
+                        <div class="music-feature-item">
+                            <div class="feature-icon-large">
+                                <i class="bi bi-headphones text-warning"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Binaural Beats</h4>
+                                <p>Experience brainwave entrainment for deeper meditation and focus enhancement.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="music-player-demo">
+                        <div class="music-player">
+                            <div class="album-cover-large">
+                                <i class="bi bi-music-note-beamed"></i>
+                        </div>
+                            <div class="player-info">
+                                <h4>Workout Mix 2024</h4>
+                                <p class="text-muted">ZenTime Curated</p>
+                                        </div>
+                            <div class="player-controls">
+                                <button class="btn btn-outline-primary">
+                                    <i class="bi bi-skip-backward"></i>
+                                </button>
+                                <button class="btn btn-primary btn-lg">
+                                    <i class="bi bi-play-fill"></i>
+                                </button>
+                                <button class="btn btn-outline-primary">
+                                    <i class="bi bi-skip-forward"></i>
+                                </button>
+                                        </div>
+                            <div class="playlist-preview">
+                                <div class="playlist-item">
+                                    <span>1. High Energy Workout</span>
+                                    <span class="duration">3:45</span>
+                                        </div>
+                                <div class="playlist-item">
+                                    <span>2. Cardio Boost</span>
+                                    <span class="duration">4:12</span>
+                                </div>
+                                <div class="playlist-item">
+                                    <span>3. Strength Training</span>
+                                    <span class="duration">3:58</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Analytics Section -->
+    <section id="analytics" class="py-5 bg-light">
+            <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="display-5 fw-bold">Advanced Analytics</h2>
+                    <p class="lead">Track your progress with detailed insights</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="analytics-card">
+                        <h4><i class="bi bi-graph-up text-primary me-2"></i>Progress Tracking</h4>
+                        <div class="progress-stats">
+                            <div class="stat-row">
+                                <span>Workouts Completed</span>
+                                <span class="stat-value">24</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Total Minutes</span>
+                                <span class="stat-value">320</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Calories Burned</span>
+                                <span class="stat-value">2,450</span>
+                            </div>
+                            <div class="stat-row">
+                                <span>Current Streak</span>
+                                <span class="stat-value">7 days</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="analytics-card">
+                        <h4><i class="bi bi-target text-success me-2"></i>Goal Achievement</h4>
+                        <div class="goal-progress">
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span>Weekly Workouts</span>
+                                    <span>4/5</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span>Meditation Minutes</span>
+                                    <span>45/60</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span>Calorie Goal</span>
+                                    <span>2,450/3,000</span>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: 82%"></div>
+                                </div>
+                            </div>
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
+    <section class="py-5 bg-primary text-white">
             <div class="container">
-                <div class="cta-content animate-fade-in">
-                    <h2>Ready to Experience ZenTime?</h2>
-                    <p>Start your journey to mindfulness and improved focus today.</p>
-                    <a href="contact.html" class="btn btn-large pulse">Contact Us</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <a href="index.html" class="footer-logo">Zen<span>Time</span></a>
-                    <p>ZenTime is dedicated to helping you find peace, focus, and balance in your daily life through meditation and mindfulness practices.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg>
+            <div class="row text-center">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="display-5 fw-bold mb-4">Ready to Experience These Features?</h2>
+                    <p class="lead mb-4">
+                        Join thousands of users who are already transforming their lives with ZenTime's AI-powered features.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="index.html" class="btn btn-light btn-lg me-3">
+                            <i class="bi bi-play-circle me-2"></i>Get Started Free
                         </a>
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
-                            </svg>
+                        <a href="index.html#ai-coach" class="btn btn-outline-light btn-lg">
+                            <i class="bi bi-robot me-2"></i>Try AI Coach
                         </a>
                     </div>
                 </div>
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <h4 class="mb-3">
+                            <div class="brand-icon me-2">Z</div>
+                            ZenTime
+                        </h4>
+                        <p>Transform your life with AI-powered fitness and meditation. Personalized wellness for everyone.</p>
+                    <div class="social-links">
+                            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Product</h5>
+                    <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="features.html">Features</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html#ai-coach">AI Coach</a></li>
+                        <li><a href="index.html#progress">Progress</a></li>
                     </ul>
                 </div>
-                <div class="footer-newsletter">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter to receive updates and mindfulness tips.</p>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Stay updated with the latest wellness tips and features.</p>
                     <form class="newsletter-form">
-                        <input type="email" class="newsletter-input" placeholder="Your Email" required>
-                        <button type="submit" class="newsletter-btn">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                            </svg>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email">
+                            <button class="btn btn-primary" type="submit" aria-label="Subscribe to newsletter">
+                                <i class="bi bi-arrow-right"></i>
                         </button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 ZenTime. All Rights Reserved. Designed by Your Name</p>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 ZenTime. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Made with ❤️ for your wellness journey</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
     <script src="script.js"></script>
 </body>
 </html>
